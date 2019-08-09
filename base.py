@@ -11,6 +11,7 @@ import time
 import signal
 
 from play.utils import *
+from dotenv import load_dotenv
 
 COMMANDS = ['run', 'new', 'clean', '', 'id', 'new,run', 'clean,run', 'modules']
 
@@ -141,7 +142,12 @@ def handle_sigint(signum, frame):
 def run(app, args):
     global process
     app.check()
-    
+
+    # load env file
+    env_path = app.path+'/.env'
+    print "~try to load env file ("+ env_path+")"
+    load_dotenv(dotenv_path=env_path)
+
     print "~ Ctrl+C to stop"
     print "~ "
     java_cmd = app.java_cmd(args)
