@@ -145,7 +145,7 @@ def run(app, args):
 
     # load env file
     env_path = app.path+'/.env'
-    print "~try to load env file ("+ env_path+")"
+    print "~ try to load env file ("+ env_path+")"
     load_dotenv(dotenv_path=env_path)
 
     print "~ Ctrl+C to stop"
