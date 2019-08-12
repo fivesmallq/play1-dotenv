@@ -10,9 +10,10 @@ echo "~ playframework path ($play_path)"
 echo "~ copy dotenv to framework pym"
 rm -fr $play_path"/framework/pym/dotenv"
 cp -r python-dotenv-0.10.3/src/dotenv $play_path"/framework/pym/"
-echo "~ backup base.py to base.py_bak"
-mv $play_path"/framework/pym/play/commands/base.py" $play_path"/framework/pym/play/commands/base.py_bak" 
-echo "~ replace base.py"
+timestamp=`date +%s`
+echo "~ backup base.py to base.py_$timestamp"
+mv $play_path"/framework/pym/play/commands/base.py" $play_path"/framework/pym/play/commands/base.py_$timestamp" 
+echo "~ download and replace base.py"
 curl -sfL https://raw.githubusercontent.com/fivesmallq/play1-dotenv/master/base.py > $play_path"/framework/pym/play/commands/base.py"
 echo "~ clean resources"
 rm -fr v0.10.3.zip
