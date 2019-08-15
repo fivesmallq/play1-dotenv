@@ -12,7 +12,7 @@ curl -sfL https://raw.githubusercontent.com/fivesmallq/play1-dotenv/master/insta
 ```
 
 ## Test
-In a playframework project. run `play run`, you will see log.
+In a playframework project. run `play run`, you will see log `try to load env file xxxx`
 
 ```sh
 ~        _            _
